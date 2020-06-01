@@ -391,7 +391,8 @@ while True:
     # Humidity
     humidity = bme280.get_humidity()
     corr_humidity = correct_humidity(humidity, temperature, corr_temperature)
-    humidity_string = f"{corr_humidity:.0f}%"
+    #humidity_string = f"{corr_humidity:.0f}%" #this is not correct
+    humidity_string = f"{humidity:.0f}%"
     img = overlay_text(img, (68, 48), humidity_string, font_lg, align_right=True)
     spacing = font_lg.getsize(humidity_string)[1] + 1
     humidity_desc = describe_humidity(corr_humidity).upper()
